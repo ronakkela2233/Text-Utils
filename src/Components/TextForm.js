@@ -30,18 +30,21 @@ export default function TextForm(mean) {
     const lowercase=()=>{
         let newtext=text.toLowerCase();
         setText(newtext);
+        mean.showAlert("The text is converted to lowercase","success");
     }
 
     const uppercase=()=>{
         console.log('Something Happened '+text);
         let newtext=text.toUpperCase();
         setText(newtext);
+        mean.showAlert("The text is converted to uppercase","success");
         // setText("you havee clicked Uppercase");
     }
 
     const Clear=()=>{
         let newtext='';
         setText(newtext);
+        mean.showAlert("The textbox is cleared","success");
     }
 
     
@@ -61,7 +64,7 @@ export default function TextForm(mean) {
     return (
         <div  className='container' style={mean.lightMode}>
             <h1 style={mean.lightMode}>{mean.heading}</h1>
-            <div className="mb-2">
+            <div className="mb-2 ms-7">
                 <label htmlFor="exampleFormControlTextarea1" className="form-label" style={ mean.lightMode}>Text Area</label>
                 <textarea className="form-control" value={text}  onChange={handleOnChange} id="exampleFormControlTextarea2" rows="7" style={{...mean.lightMode, border: '1.5px solid grey'}}></textarea>
             </div>
